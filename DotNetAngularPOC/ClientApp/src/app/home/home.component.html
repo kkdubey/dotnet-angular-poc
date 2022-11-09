@@ -1,0 +1,25 @@
+<h2>Technologies</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Action: (<a [routerLink]="['fetch-data']" class="link-primary">Add Language</a>)</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let language of languages;let i=index;">
+      <th>{{i + 1}}</th>
+      <td>{{ language.name }}</td>
+      <td>{{ language.description }}</td>
+      <td>{{ language.languageType }}</td>
+      <td>
+        <a [routerLink]="['/fill-data', language.name]" class="link-primary">Edit</a>
+        <a [routerLink]="[]" (click)="deleteLanguage(language.name)" class="link-danger" style=" margin-left: 10px;">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
